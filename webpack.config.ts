@@ -16,7 +16,7 @@ export default (env: EnvVariables) => {
 
   const config: webpack.Configuration = {
     mode: env.mode ?? 'development',
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: '[name].[contenthash].js',
@@ -29,6 +29,9 @@ export default (env: EnvVariables) => {
     module: {
       rules: [
         {
+          // ts-loader работает с jsx по умолчанию
+          // Еслиб его не было в проекте, то нужно
+          // было бы настраивать babel-loader
           test: /\.tsx?$/,
           use: 'ts-loader',
           exclude: /node_modules/,
