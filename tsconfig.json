@@ -4,7 +4,7 @@
         "noImplicitAny": true, //не допускает any, выдаёт ошибку
         "module": "ESNext",
         "target": "es5", // к какому стандарту код компилируется
-        "jsx": "react-jsx",
+        "jsx": "react-jsx", // избегаем импортов реакта
         "allowJs": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
